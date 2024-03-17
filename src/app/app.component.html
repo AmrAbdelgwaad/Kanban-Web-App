@@ -1,5 +1,22 @@
-<div class="dark">
-  <h1 class="bg-amber-400 font-Jakarta text-5xl dark:bg-emerald-200">Platform Launch</h1>
+<div [class]="theme">
+  <div class="font-Jakarta dark:bg-dark-grey">
+    <picture>
+      <source
+        media="(min-width: 49em)"
+        [srcset]="logo"
+        width="153"
+        height="26"
+      />
+      <img
+        ngSrc="assets/images/logo-mobile.svg"
+        alt="Kanban - Home"
+        height="25"
+        width="24"
+        priority
+      />
+    </picture>
+    <h1 class="text-black text-5xl dark:text-white">Platform Launch</h1>
+
+    <input type="checkbox" name="" id="" (click)="onClick()" />
+  </div>
 </div>
-
-

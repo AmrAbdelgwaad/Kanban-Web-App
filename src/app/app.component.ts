@@ -1,13 +1,25 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NgOptimizedImage],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'Kanban-Web-App';
+  theme = 'dark';
+  logo = 'assets/images/logo-light.svg';
+
+  onClick() {
+    this.theme = this.theme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', this.theme);
+    this.logo =
+      this.logo === 'assets/images/logo-light.svg'
+        ? 'assets/images/logo-dark.svg'
+        : 'assets/images/logo-light.svg';
+  }
 }
