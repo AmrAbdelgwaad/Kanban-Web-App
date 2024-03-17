@@ -16,10 +16,10 @@ export class AppComponent {
 
   onClick() {
     this.theme = this.theme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('theme', this.theme);
     this.logo =
       this.logo === 'assets/images/logo-light.svg'
         ? 'assets/images/logo-dark.svg'
         : 'assets/images/logo-light.svg';
+    localStorage.setItem('theme', this.theme);
   }
 }
