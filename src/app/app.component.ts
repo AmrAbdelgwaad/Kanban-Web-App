@@ -11,7 +11,7 @@ import { NgOptimizedImage } from '@angular/common';
 })
 export class AppComponent {
   title = 'Kanban-Web-App';
-  theme = 'dark';
+  theme = localStorage.getItem('theme') || 'dark';
   logo = 'assets/images/logo-light.svg';
 
   onClick() {
