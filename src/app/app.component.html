@@ -1,12 +1,21 @@
 <div [class]="theme">
   <div class="font-Jakarta dark:bg-dark-grey">
     <picture>
+      @if(theme === 'dark'){
       <source
         media="(min-width: 49em)"
-        [srcset]="logo"
+        srcset="assets/images/logo-light.svg"
         width="153"
         height="26"
       />
+      } @else {
+      <source
+        media="(min-width: 49em)"
+        srcset="assets/images/logo-dark.svg"
+        width="153"
+        height="26"
+      />
+      }
       <img
         ngSrc="assets/images/logo-mobile.svg"
         alt="Kanban - Home"
@@ -15,8 +24,25 @@
         priority
       />
     </picture>
-    <h1 class="text-black text-5xl dark:text-white">Platform Launch</h1>
+    <h1 class="text-black text-lg md: dark:text-white">Platform Launch</h1>
 
-    <input type="checkbox" name="" id="" (click)="onClick()" />
+    <button>
+      <span class="sr-only"></span>
+      <img
+        ngSrc="assets/images/icon-chevron-down.svg"
+        alt=""
+        height="7"
+        width="10"
+        priority
+      />
+    </button>
+
+    <input
+      type="checkbox"
+      name=""
+      id=""
+      (click)="onClick()"
+      class="block w-40"
+    />
   </div>
 </div>
