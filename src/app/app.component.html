@@ -1,48 +1,46 @@
-<div [class]="theme">
-  <div class="font-Jakarta dark:bg-dark-grey">
-    <picture>
-      @if(theme === 'dark'){
-      <source
-        media="(min-width: 49em)"
-        srcset="assets/images/logo-light.svg"
-        width="153"
-        height="26"
-      />
-      } @else {
-      <source
-        media="(min-width: 49em)"
-        srcset="assets/images/logo-dark.svg"
-        width="153"
-        height="26"
-      />
-      }
-      <img
-        ngSrc="assets/images/logo-mobile.svg"
-        alt="Kanban - Home"
-        height="25"
-        width="24"
-        priority
-      />
-    </picture>
-    <h1 class="text-black text-lg md: dark:text-white">Platform Launch</h1>
+<div>
+  <div class="font-Jakarta">
+    <header>
+      <div>
+        <h1 class="sr-only">Kanban Board</h1>
+        <picture>
+          <source
+            media="(min-width: 49em)"
+            [srcset]="
+              isDarkMode
+                ? 'assets/images/logo-light.svg'
+                : 'assets/images/logo-dark.svg'
+            "
+            width="153"
+            height="26"
+          />
 
-    <button>
-      <span class="sr-only"></span>
-      <img
-        ngSrc="assets/images/icon-chevron-down.svg"
-        alt=""
-        height="7"
-        width="10"
-        priority
-      />
-    </button>
+          <img
+            ngSrc="assets/images/logo-mobile.svg"
+            alt=""
+            height="25"
+            width="24"
+            priority
+          />
+        </picture>
+        <h2>Platform Launch</h2>
 
-    <input
-      type="checkbox"
-      name=""
-      id=""
-      (click)="onClick()"
-      class="block w-40"
-    />
+        <button
+          aria-label="show settings"
+          (click)="openSetting()"
+          class="focus-visible:outline-none"
+        >
+          <img
+            ngSrc="assets/images/icon-chevron-down.svg"
+            alt=""
+            height="7"
+            width="10"
+            priority
+          />
+        </button>
+      </div>
+    </header>
+
+    <app-theme-toggle></app-theme-toggle>
   </div>
 </div>
