@@ -1,3 +1,6 @@
+@use "../styles/globals" as *;
+
 header{
   background: var(--blue);
+  @include not-sr-only;
 }

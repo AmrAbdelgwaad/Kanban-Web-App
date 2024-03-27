@@ -1,6 +1,8 @@
+<label for="themeToggle" class="sr-only">{{ dark ? 'Change theme to light' : 'Change theme to dark' }}</label>
 <input
   type="checkbox"
-  name=""
-  id=""
+  id="themeToggle"
+  [checked]="dark"
   (click)="toggleTheme()"
 />
+

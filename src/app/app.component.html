@@ -1,6 +1,5 @@
-<div>
-  <div class="font-Jakarta">
-    <header>
+
+    <header class="sr-only">
       <div>
         <h1 class="sr-only">Kanban Board</h1>
         <picture>
@@ -23,24 +22,28 @@
             priority
           />
         </picture>
-        <h2>Platform Launch</h2>
+        <h2 class="sr-only">Platform Launch</h2>
 
         <button
           aria-label="show settings"
           (click)="openSetting()"
-          class="focus-visible:outline-none"
+          class=""
+
         >
+          <span aria-hidden="true">platform launch</span>
           <img
             ngSrc="assets/images/icon-chevron-down.svg"
             alt=""
             height="7"
             width="10"
             priority
+            style="display: inline"
           />
         </button>
+
       </div>
+      <app-theme-toggle></app-theme-toggle>
     </header>
 
-    <app-theme-toggle></app-theme-toggle>
-  </div>
-</div>
+
+
