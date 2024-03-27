@@ -9,10 +9,13 @@ import { ThemeService } from '../theme.service';
   styleUrl: './theme-toggle.component.scss',
 })
 export class ThemeToggleComponent {
-  constructor(private themeService: ThemeService) {}
-  dark = this.themeService.isDarkMode();
+  dark: boolean;
+  constructor(private themeService: ThemeService) {
+    this.dark = this.themeService.isDarkMode();
+  }
+
   toggleTheme(): void {
-    const isDarkMode = !this.themeService.isDarkMode();
-    this.themeService.setDarkMode(isDarkMode);
+    this.dark = !this.dark;
+    this.themeService.setDarkMode(this.dark);
   }
 }

@@ -28,15 +28,18 @@ import { ThemeService } from './theme.service';
 })
 export class AppComponent {
   title = 'Kanban-Web-App';
+
   private _themeService: ThemeService = new ThemeService();
   get themeService(): ThemeService {
     return this._themeService;
   }
+
   get isDarkMode(): boolean {
     return this.themeService.isDarkMode();
   }
 
   constructor(public dialog: MatDialog) {}
+
   openSetting() {
     this.dialog.open(Setting, {
       position: { top: '80px' },
